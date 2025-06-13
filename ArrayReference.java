@@ -9,6 +9,10 @@ class Circle extends Shape {
     void draw() {
         System.out.println("iam circle");
     }
+
+    void bark() {
+        System.out.println("barking");
+    }
 }
 
 class Square extends Shape {
@@ -20,9 +24,10 @@ class Square extends Shape {
 
 public class ArrayReference {
     public static void main(String[] args) {
-        Shape[] shapes = { new Circle(), new Square() };
-        for (Shape s : shapes) {
-            s.draw();
+        Shape s = new Circle();
+        if (s instanceof Circle) {
+            Circle c = (Circle) s;
+            c.bark();
 
         }
     }
